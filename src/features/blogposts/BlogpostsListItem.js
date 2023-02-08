@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import HeaderImg from '../header/Header.png'
 
 const selectTodoById = (state, blogpostId) => {
   return state.blogposts.data.find((blogpost) => blogpost.id === blogpostId)
@@ -18,7 +19,7 @@ const BlogpostsListitem = ({ id }) => {
     <div className="pure-u-1 pure-u-md-1-2">
       <div className="blogpostslistitem">
       <div className="blogpostslistitem-image">
-        <img src={img_url} alt={"Social Brothers - " + title} />
+        <img src={HeaderImg} alt={"Social Brothers - " + title} />
         <span className="image-timestamp">{date_timestamp}</span>
         <span className="image-category">{category.name}</span>
       </div>
