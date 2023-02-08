@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import HeaderImg from '../header/Header.png'
 
 const selectTodoById = (state, blogpostId) => {
@@ -8,12 +8,10 @@ const selectTodoById = (state, blogpostId) => {
 
 const BlogpostsListitem = ({ id }) => {
   const todo = useSelector((state) => selectTodoById(state, id))
-  const { title, content, img_url, created_at, category } = todo
+  const { title, content, created_at, category } = todo
 
   var date = new Date(created_at);
   var date_timestamp = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-
-  const dispatch = useDispatch()
 
   return (
     <div className="pure-u-1 pure-u-md-1-2">
