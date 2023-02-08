@@ -1,5 +1,4 @@
 import './App.css';
-import './grids-responsive-min.css';
 
 import Header from './features/header/Header'
 import BlogpostsList from './features/blogposts/BlogpostsList';

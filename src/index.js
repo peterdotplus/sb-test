@@ -6,7 +6,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store'
 import { fetchBlogposts } from './features/blogposts/blogpostsSlice'
-require('purecss')
 
 store.dispatch(fetchBlogposts)
 
