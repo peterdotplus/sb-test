@@ -13,3 +13,10 @@ nav ul li a, nav ul li a:visited {color:#fff;}
 .blogpostslistitem p {padding-bottom:1.2em;}
 .image-timestamp, .image-category {color:#fff;position:relative;top:-3em;height:0;display:block;}
 .image-category {text-align:right;margin-top:-1em}
+
+.pagination {background:#fff;}
+.pagination ul {margin-top:0;list-style-type:none;padding-bottom:2em;text-align:center;}
+.pagination ul li {margin-right:.5em;display:inline;}
+.pagination ul li.active {display:inline-block;height:27px;padding-top:5px;width:32px;border-radius:18px;background-color:#F2F2F2;}
+.pagination ul li a, .pagination ul li a:visited {color:#fff;}
+.pagination .next-page {color:#F27623;}

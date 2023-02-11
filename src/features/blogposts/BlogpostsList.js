@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, shallowEqual } from 'react-redux'
 import BlogpostsListItem from './BlogpostsListItem'
 
-const selectBlogpostIds = (state) => state.blogposts.map((todo) => todo.id)
+const selectBlogpostIds = (state) => state.blogposts.map((blogpost) => blogpost.id)
 
 const BlogpostsList = () => {
   const blogpostIds = useSelector(selectBlogpostIds, shallowEqual)

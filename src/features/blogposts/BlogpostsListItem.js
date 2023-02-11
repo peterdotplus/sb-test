@@ -1,13 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const selectTodoById = (state, blogpostId) => {
+const selectBlogpostById = (state, blogpostId) => {
   return state.blogposts.find((blogpost) => blogpost.id === blogpostId)
 }
 
 const BlogpostsListitem = ({ id }) => {
-  const todo = useSelector((state) => selectTodoById(state, id))
-  const { title, content, created_at, category, img_url } = todo
+  const blogpost = useSelector((state) => selectBlogpostById(state, id))
+  const { title, content, created_at, category, img_url } = blogpost
 
   var date = new Date(created_at);
   var date_timestamp = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
