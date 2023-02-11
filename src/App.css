@@ -1,8 +1,13 @@
 html, body {background:#F4F4F4;}
 
+nav {position:absolute;right:0;top:3em}
+nav ul {list-style-type:none;text-align:right;}
+nav ul li {margin-right:4em;display:inline;font-size:18px;}
+nav ul li a, nav ul li a:visited {color:#fff;}
+
 .blogposts-list {background:#fff;margin-left:1em;}
 .blogpostslistitem {margin:1em;box-shadow:0 0 10px 0 rgba(0,0,0,0.1);}
-.blogpostslistitem-image img {max-width:100%;}
+.blogpostslistitem-image img {width:100%;}
 .blogpostslistitem h1, .blogpostslistitem p, .image-timestamp, .image-category {margin:1rem;}
 .blogpostslistitem h1 {margin-top:1.2rem;}
 .blogpostslistitem p {padding-bottom:1.2em;}
