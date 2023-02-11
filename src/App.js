@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './features/header/Header'
 import BlogpostsList from './features/blogposts/BlogpostsList';
+import BlogpostsListArchive from './features/blogposts/BlogpostsListArchive';
 
 
 function App() {
@@ -54,7 +55,7 @@ function Blog() {
     <div className="App">
       <Header />
       <div className="pure-g">
-        <div className="pure-u-1"><BlogpostsList /></div>
+        <div className="pure-u-1"><BlogpostsListArchive /></div>
     </div>
     </div>
   );

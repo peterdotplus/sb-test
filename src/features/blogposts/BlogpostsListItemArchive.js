@@ -2,10 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const selectTodoById = (state, blogpostId) => {
-  return state.blogposts.find((blogpost) => blogpost.id === blogpostId)
+  return state.blogpostsArchive.data.find((blogpost) => blogpost.id === blogpostId)
 }
 
-const BlogpostsListitem = ({ id }) => {
+const BlogpostsListitemArchive = ({ id }) => {
   const todo = useSelector((state) => selectTodoById(state, id))
   const { title, content, created_at, category, img_url } = todo
 
@@ -13,7 +13,7 @@ const BlogpostsListitem = ({ id }) => {
   var date_timestamp = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
 
   return (
-    <div className="pure-u-1 pure-u-md-1-2">
+    <div className="pure-u-1 pure-u-md-1-4">
       <div className="blogpostslistitem">
       <div className="blogpostslistitem-image">
         <img src={"https://frontend-case-api.sbdev.nl/storage/" + img_url} alt={"Social Brothers - " + title} />
@@ -27,4 +27,4 @@ const BlogpostsListitem = ({ id }) => {
   )
 }
 
-export default BlogpostsListitem
+export default BlogpostsListitemArchive
