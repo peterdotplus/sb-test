@@ -21,13 +21,13 @@ export default function blogpostsReducer(state = initialState, action) {
 // Thunk function
 export async function fetchBlogposts(dispatch, getState) {
   const response = await client.get('https://frontend-case-api.sbdev.nl/api/posts?perPage=4', {headers: {token: "pj11daaQRz7zUIH56B9Z"}})
-  dispatch({ type: 'blogposts/blogpostsLoaded', payload: response })
+  dispatch({ type: 'blogposts/blogpostsLoaded', payload: response.data })
 }
 
 export function saveNewBlogpost(text) {
   return async function saveNewblogpostThunk(dispatch, getState) {
     const initialblogpost = { text }
     const response = await client.post('https://frontend-case-api.sbdev.nl/api/posts', { blogpost: initialblogpost, headers: {token: "pj11daaQRz7zUIH56B9Z"} })
-    dispatch({ type: 'blogposts/blogpostAdded', payload: response })
+    dispatch({ type: 'blogposts/blogpostAdded', payload: response.data })
   }
 }

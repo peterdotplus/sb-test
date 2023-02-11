@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import HeaderImg from '../header/Header.png'
 
 const selectTodoById = (state, blogpostId) => {
-  return state.blogposts.data.find((blogpost) => blogpost.id === blogpostId)
+  return state.blogposts.find((blogpost) => blogpost.id === blogpostId)
 }
 
 const BlogpostsListitem = ({ id }) => {
