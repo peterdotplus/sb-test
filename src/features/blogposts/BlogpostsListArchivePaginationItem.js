@@ -7,7 +7,7 @@ const BlogpostsListArchivePaginationItem = ({ label, active }) => {
       <li className={active ? "active" : ""}>{label}</li>
     )
   } else if(label !== "pagination.previous") {
-    return <a href="#" className="next-page">Volgende pagina &#8594;</a>;
+    return <a href="#" className="next-page" onClick={(e) => e.preventDefault()}>Volgende pagina &#8594;</a>;
   }
 }
 
