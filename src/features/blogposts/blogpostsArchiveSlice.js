@@ -23,3 +23,8 @@ export async function fetchBlogposts(dispatch, getState) {
   const response = await client.get('https://frontend-case-api.sbdev.nl/api/posts?perPage=8', {headers: {token: "pj11daaQRz7zUIH56B9Z"}})
   dispatch({ type: 'blogposts/blogpostsLoaded', payload: response })
 }
+
+export const fetchBlogpostsByPage = pageId => async dispatch => {
+  const response = await client.get(`https://frontend-case-api.sbdev.nl/api/posts?perPage=8&page=${pageId}`, {headers: {token: "pj11daaQRz7zUIH56B9Z"}})
+  dispatch({ type: 'blogposts/blogpostsLoaded', payload: response })
+}
