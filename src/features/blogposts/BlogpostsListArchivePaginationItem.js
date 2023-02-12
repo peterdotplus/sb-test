@@ -7,10 +7,10 @@ const BlogpostsListArchivePaginationItem = ({ label, active }) => {
 
   if(label !== "pagination.next" && label !== "pagination.previous") {
     return (
-      <li className={active ? "active" : ""}><a href="#" onClick={(e) => {e.preventDefault();dispatch(fetchBlogpostsByPage(label))}}>{label}</a></li>
+      <li className={active ? "active" : ""}><button onClick={(e) => {e.preventDefault();dispatch(fetchBlogpostsByPage(label))}}>{label}</button></li>
     )
   } else if(label !== "pagination.previous") {
-    return <a href="#" className="next-page" onClick={(e) => e.preventDefault()}>Volgende pagina &#8594;</a>;
+    return <button className="next-page" onClick={(e) => e.preventDefault()}>Volgende pagina &#8594;</button>;
   }
 }
 
