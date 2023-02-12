@@ -24,10 +24,9 @@ export async function fetchBlogposts(dispatch, getState) {
   dispatch({ type: 'blogposts/blogpostsLoaded', payload: response.data })
 }
 
-export function saveNewBlogpost(text) {
+export function saveNewBlogpost(title, category_id, image, content) {
   return async function saveNewblogpostThunk(dispatch, getState) {
-    const initialblogpost = { text }
-    const response = await client.post('https://frontend-case-api.sbdev.nl/api/posts', { blogpost: initialblogpost, headers: {token: "pj11daaQRz7zUIH56B9Z"} })
+    const response = await client.post('https://frontend-case-api.sbdev.nl/api/posts', { title, category_id, image, content }, {headers: {token: "pj11daaQRz7zUIH56B9Z"}})
     dispatch({ type: 'blogposts/blogpostAdded', payload: response.data })
   }
 }

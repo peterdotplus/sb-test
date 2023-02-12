@@ -3,6 +3,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 import './App.css';
 
 import Header from './features/header/Header'
+import BlogpostsAdd from './features/blogposts/BlogpostsAdd';
 import BlogpostsList from './features/blogposts/BlogpostsList';
 import BlogpostsListArchive from './features/blogposts/BlogpostsListArchive';
 
@@ -43,7 +44,7 @@ function Home() {
     <div className="App">
       <Header />
       <div className="pure-g">
-        <div className="pure-u-1 pure-u-md-1-2"> ... </div>
+        <div className="pure-u-1 pure-u-md-1-2"><BlogpostsAdd /></div>
         <div className="pure-u-1 pure-u-md-1-2"><BlogpostsList /></div>
     </div>
     </div>
