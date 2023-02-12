@@ -4,13 +4,13 @@ const initialState = []
 
 export default function blogpostsReducer(state = initialState, action) {
   switch (action.type) {
-    case 'blogposts/blogpostAdded': {
+    case 'blogpostsArchive/blogpostAdded': {
       return [...state, action.payload]
     }
-    case 'blogposts/blogpostDeleted': {
+    case 'blogpostsArchive/blogpostDeleted': {
       return state.filter((blogpost) => blogpost.id !== action.payload)
     }
-    case 'blogposts/blogpostsLoaded': {
+    case 'blogpostsArchive/blogpostsLoaded': {
       return action.payload
     }
     default:
@@ -21,10 +21,10 @@ export default function blogpostsReducer(state = initialState, action) {
 // Thunk function
 export async function fetchBlogposts(dispatch, getState) {
   const response = await client.get('https://frontend-case-api.sbdev.nl/api/posts?perPage=8', {headers: {token: "pj11daaQRz7zUIH56B9Z"}})
-  dispatch({ type: 'blogposts/blogpostsLoaded', payload: response })
+  dispatch({ type: 'blogpostsArchive/blogpostsLoaded', payload: response })
 }
 
 export const fetchBlogpostsByPage = pageId => async dispatch => {
   const response = await client.get(`https://frontend-case-api.sbdev.nl/api/posts?perPage=8&page=${pageId}`, {headers: {token: "pj11daaQRz7zUIH56B9Z"}})
-  dispatch({ type: 'blogposts/blogpostsLoaded', payload: response })
+  dispatch({ type: 'blogpostsArchive/blogpostsLoaded', payload: response })
 }
